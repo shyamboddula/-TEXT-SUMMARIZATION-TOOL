@@ -1,14 +1,7 @@
 import streamlit as st
 from txtai.pipeline import Summary
-from PyPDF2 import  PdfReader
 from transformers import pipeline
 from transformers import pipeline
-
-
-
-
-
-
 
 @st.cache_resource
 def summary_text(text):
@@ -16,10 +9,6 @@ def summary_text(text):
     summary_model = pipeline("summarization")
     summary = summary_model(text) 
     return summary_model(text)
-
-
-
-
 
 choice = st.sidebar.selectbox("select your choice",["Summarize Text"])
 
